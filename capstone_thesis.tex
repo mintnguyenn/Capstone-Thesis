@@ -1,0 +1,192 @@
+\documentclass[a4paper, 12pt, oneside]{report}
+
+% \title{First document}
+% \author{Huy Nhat Minh Nguyen}
+% \date{May 2022}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LINE SPACING
+\newcommand{\linespacing}{1.5}
+\renewcommand{\baselinestretch}{\linespacing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\headheight}{14.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY STYLE
+\usepackage{natbib}
+% \bibliographystyle{plain} for [1], [2] etc.
+% \bibliographystyle{apalike}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OTHER FORMATTING/LAYOUT DECLARATIONS
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{standalone}
+
+% The left-hand-side should be 40mm.  The top and bottom margins should be
+% 25mm deep.  The right hand margin should be 20mm.
+\usepackage[a4paper,top=3cm,bottom=3cm,left=3cm,right=3cm,headsep=10pt]{geometry}
+\flushbottom
+% Pages should be numbered consecutively through the main text.  Page numbers
+% should be located centrally at the top of the page.
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+	\fancyhf{}
+	% Add "DRAFT: <today's date>" to header (comment out the following to remove)
+	%\lhead{\textit{DRAFT: \today}}
+	%
+	\chead{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+}
+\pagestyle{fancy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% HYPERREF
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=blue,citecolor=blue,linkcolor=blue,bookmarksnumbered,plainpages=false]{hyperref}
+% For print version, use this instead:
+%\usepackage[pdfusetitle,bookmarksnumbered,plainpages=false]{hyperref}
+%\usepackage{backref}
+%\renewcommand{\backrefpagesname}{Cited on}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN DOCUMENT
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREAMBLE: roman page numbering i, ii, iii, ...
+\pagenumbering{roman}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TITLE PAGE: The title page should give the following information:
+%%	(i) the full title of the thesis and the sub-title if any;
+%%	(ii) the full name of the author;
+%%	(iii) the qualification aimed for;
+%%	(iv) the name and logo of the University;
+%%	(v) the month and year of submission.
+\thispagestyle{fancy}
+\begin{flushright}
+\includegraphics[width=8cm]{Images/uts_logo_complete.jpg}
+\end{flushright}	
+\vskip20mm
+\begin{center}
+% TITLE
+\LARGE\textbf{Extrinsic calibration of multiple partially overlapping RGB-D cameras}
+\vskip5mm
+% SUBTITLE (optional)
+\large\textit{Capstone Thesis}
+\vskip2mm
+% AUTHOR
+\normalsize\textbf{Huy Nhat Minh Nguyen}
+
+\vspace{20mm}
+\normalsize
+Student Number: 13734569 \\
+Project Number: AUT-22-07822 \\
+Major: Mechatronics Engineering
+\vskip5mm
+Supervisor: Dr. Alen Alempijevic \\
+Co-Adviser: Mr Jasprabhjit Mehami \\
+% \normalsize
+\end{center}
+\vfill
+\begin{center}
+\normalsize
+% QUALIFICATION
+41030 - Engineering Capstone \\
+Bachelor of Engineering (Honours) \\
+University of Technology Sydney	\\
+Faculty of Engineering and Information Technology\\
+% DATE OF SUBMISSION
+31 May, 2022
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SUMMARY PAGE
+\input{Frontmatter/Declaration}
+\input{Frontmatter/Abstract}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACKNOWLEDGEMENTS
+\input{Frontmatter/Acknowledgment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE OF CONTENTS, LISTS OF TABLES & FIGURES
+\pdfbookmark[0]{Contents}{contents_bookmark}
+\tableofcontents
+\listoftables
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoffigures
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MAIN THESIS TEXT: arabic page numbering 1, 2, 3, ...
+\newpage
+\pagenumbering{arabic}
+
+%-----------------------------------------------------
+% Chapter: Introduction
+%-----------------------------------------------------
+
+% NB Good idea to put each chapter in a separate file.
+% If you put the following in a file called "thesis_introduction.tex"
+% then you can include it with the following:
+
+\input{Chapters/Introduction}
+
+\input{Chapters/LiteratureReview}
+
+\input{Chapters/Methodology}
+
+\input{Chapters/Evaluation and Results}
+
+\input{Chapters/Discussion}
+
+\input{Chapters/Conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{uts.bst}
+\bibliography{Bibliography/capstone_references}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% START APPENDICES
+\appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% %-----------------------------------------------------
+% % Appendix: Code
+% %-----------------------------------------------------
+% \chapter{Code}
+% \label{app:code}
+
+% \begin{verbatim}
+% 10 PRINT "HELLO WORLD"
+% \end{verbatim}
+
+% \input{Chapters/appendix1.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END DOCUMENT
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%

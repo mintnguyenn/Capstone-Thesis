@@ -1,0 +1,15 @@
+\thispagestyle{fancy}
+\null\vskip10mm
+\begin{center}
+\underline{\textsc{Abstract}}
+\vskip2mm
+\end{center}
+% Change line spacing
+\renewcommand{\baselinestretch}{1.0}
+\small\normalsize
+% Abstract HERE (300 word limit for most subjects):
+Exteroceptive sensors and cameras have been widely implemented in various engineering fields, especially in robotics and vision. Working with a camera or a multiple camera system requires accurate camera parameters, including the intrinsic and extrinsic parameters. This led to the introduction of different camera calibration methods with varying calibration targets, depending on specific camera types and project purposes.
+
+Planar calibration targets have been extensively applied in multiple camera system calibration methods due to their simple implementation, high precision and cheap production, compared with 3D calibration targets. However, in working with calibrating a system with numerous cameras, some planar calibration targets reveal certain inconveniences, especially for extrinsic calibration. For example, in a system with multiple cameras facing each other, all cameras cannot completely capture the planar calibration target. This limits the application of the calibration method using planar calibration target to various camera system configurations.
+
+This capstone project proposes a method using an augmented planar calibration target to calibrate a multiple partially overlapping RGB-D camera system. A double-sided planar board is employed to avoid the limitations of planar targets, and the ArUco marker system is adopted as fiducial marker to support the detection algorithm. In addition, this calibration method applies the General Graph Optimisation (G2O) framework to optimise and guarantee the accuracy of the extrinsic parameters during the calibration process. This project experimentally validates the method's accuracy and discusses the applicability of the proposed technique. Finally, this project provides the framework's source code and supporting documentation, which is mainly programmed in C++ and MATLAB with ROS as a middle-ware, for further use and development.

@@ -1,0 +1,29 @@
+\lhead{}
+
+\chapter{Introduction}
+
+\section{Project background}
+
+This thesis was completed in synergy with the "Objective real-time live cattle assessments to improve profit" funded project by Meat and Livestock Australia. The overarching project aims to develop and improve profitability and productivity of the beef value chain, addressing cattle non-compliance with processor grid specifications – a \$51M pa issue for the sector and more when feeding costs are taken into consideration. This problem is aggravated by the failure to improve production efficiencies because data on cattle traits is unavailable in real-time. The industry opportunity is to have an objective real-time assessment of live cattle to assist producers to achieve greater production efficiencies by meeting "market specifications" and increasing lean meat yield so that additional dollars flow into producers' pockets.
+
+The project has developed bespoke designed inserts for a race that ensure cattle can move freely, is safe and provides unobstructed views of cattle from multiple RGB-D cameras. We have created a software framework that enables measuring hip height and estimating P8 fat and Muscle Score. To effectively perform this software framework, a thoroughly calibrated 3D multiple-cameras system is strongly required. A calibrated multiple-cameras system would provide specific parameters of cameras to operate involved tasks. 
+
+Camera parameters included intrinsic parameters and extrinsic parameters, combined to define the mathematical relationship between 3D global points $P(X, Y, Z)$ and their corresponding 2D image plane points $p(u, v)$. The intrinsic parameters, also known as the camera matrix, belong to the camera itself, consisting of the focal length f, the principal point (the optical centre), and the lens distortion. Each camera has unique intrinsic parameters that come from the physical design process. The extrinsic parameters, or the camera pose, are used to illustrate the geometrical relationship (rotation and translation) between the camera itself and a feature in its external world \citep{Zhang2014}. Specifically, in this project's scope, the extrinsic parameters of a multiple-camera system are the transformation relationship between each camera and others in this structure.
+
+Nowadays, camera calibration is essential for any computer vision system. Several software toolboxes and packages are provided and widely adopted to simplify the calibration process as well as ensure the accuracy of the results, the most common being the Open-CV library or the MATLAB Computer Vision Toolbox. However, in particular multiple-camera systems, such as the multiple partially overlapping cameras system, conventional methods cannot be used for accurate parameter results.
+
+This capstone report focus on researching and implementing a method for multiple partially overlapping RGB-D cameras calibration compatible with the ROS framework in C++ programming language. The approach is expected to solve the problem of extrinsically calibrating the camera system with fields of view overlapping and facing each other that cannot be handled using standard calibration methods.
+
+\section{Project scope}
+This capstone project proposes to use a double-sided ArUco board as the calibration target, with the support of the Open-CV library and the General Graph Optimisation (G2O) framework \citep{Kummerle2011}. The software included with this method is implemented mainly in C++ and MATLAB, and ROS (Robot Operating System) is used as a middle-ware to transfer data between the program and the multiple-camera system.
+
+\section{Thesis outline}
+This capstone thesis is structured as follows:
+
+Chapter 2 looks at the literature review of the previous camera calibration relevant to this project's purpose. This chapter evaluates the advantages and drawbacks of these methods, as well as considers the possibility and suitably to the project's objectives. It also explains why specific project decisions were taken.
+
+Chapter 3 presents the approach and the methodology of this project. These ideas are described and explained in detail. This chapter also provides important insights necessary to understand the work of the project.
+
+Chapter 4 demonstrates the implemented experiments to check the possibility and efficiency of the approach. The implementation, relevant equipment and results obtained are described in detail. 
+
+Chapter 5 discusses the methodology as well as the experiments implemented. This chapter reviews the accuracy of experimental results, clarifies the uncertainties and difficulties of this approach, and plans potential future works to improve this method.
