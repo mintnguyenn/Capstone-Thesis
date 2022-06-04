@@ -6,4 +6,4 @@ A 12 Credit Points Project submitted for the degree of C09066 - Bachelor of Engi
 
 Supervisor: Dr Alen Alempijevic - senior lecturer at University of Technology Sydney.
 
-Submitted in 31 May 2022, Sydney, Australia.
+Submitted on 31 May 2022, Sydney, Australia.
